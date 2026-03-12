@@ -20,7 +20,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(
-      state,
+      state:CartState,
       action: PayloadAction<{ id: string; title: string; price: number }>
     ) {
       const itemIndex = state.items.findIndex(
@@ -33,7 +33,7 @@ export const cartSlice = createSlice({
         state.items.push({ ...action.payload, quantity: 1 });
       }
     },
-    removeFromCart(state, action: PayloadAction<string>) {
+    removeFromCart(state:CartState, action: PayloadAction<string>) {
       const itemIndex = state.items.findIndex(
         (item) => item.id === action.payload
       );
