@@ -10,7 +10,7 @@ export default function CartItems() {
   const dispatch = useCartDispatch();
 
   const totalPrice = cartItems.reduce(
-    (val, item) => val + item.price * item.quantity,
+    (val:number, item:any) => val + item.price * item.quantity,
     0
   );
   const formattedTotalPrice = totalPrice.toFixed(2);
